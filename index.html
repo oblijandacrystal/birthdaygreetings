@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Twin</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING BALLOON BACKGROUND -->
+    <div class="balloon-background">
+            <span class="bg-balloon pink"></span>
+            <span class="bg-balloon blue"></span>
+            <span class="bg-balloon yellow"></span>
+            <span class="bg-balloon purple"></span>
+            <span class="bg-balloon beige"></span>
+            <span class="bg-balloon pink"></span>
+            <span class="bg-balloon blue"></span>
+            <span class="bg-balloon purple"></span>
+    </div>
+
+<h1>HAPPY BIRTHDAY, TWIN</h1>
+
+<div class="grid">
+    <div class="box-btn" onclick="openPopup('message')">MESSAGE</div>
+    <div class="box-btn" onclick="openPopup('pictures')">PICTURES</div>
+    <div class="box-btn" onclick="openPopup('flowers')">FLOWERS</div>
+    <div class="box-btn" onclick="openPopup('cake')">CAKE</div>
+</div>
+
+<button id="musicBtn" class="music-btn" onclick="toggleMusic()">🎵 Play music</button>
+
+<!-- MESSAGE -->
+<div id="message" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('message')">×</button>
+        <h2>MESSAGE</h2>
+        <div class="ily">
+            <div class="ily-heart" style="--d:0.2s;--f:#F7A8C4"><svg viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg"><path d="M23.6 0c-3.4 0-6.4 2.4-7.6 5.4C14.8 2.4 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.7 12.9 16 21.2 6.3-8.3 16-11.8 16-21.2C32 3.8 28.2 0 23.6 0z" fill="var(--f)"/><path d="M7 4.5C4.8 5.2 3.5 7 3.4 9" stroke="#fff" stroke-opacity=".55" stroke-width="1.6" fill="none" stroke-linecap="round"/><text x="16" y="15.5" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="700" font-size="13" fill="#fff">I</text></svg></div>
+            <div class="ily-heart" style="--d:0.7s;--f:#EE7FA6"><svg viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg"><path d="M23.6 0c-3.4 0-6.4 2.4-7.6 5.4C14.8 2.4 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.7 12.9 16 21.2 6.3-8.3 16-11.8 16-21.2C32 3.8 28.2 0 23.6 0z" fill="var(--f)"/><path d="M7 4.5C4.8 5.2 3.5 7 3.4 9" stroke="#fff" stroke-opacity=".55" stroke-width="1.6" fill="none" stroke-linecap="round"/><text x="16" y="15.5" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="700" font-size="13" fill="#fff">L</text></svg></div>
+            <div class="ily-heart" style="--d:1.2s;--f:#E45C8C"><svg viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg"><path d="M23.6 0c-3.4 0-6.4 2.4-7.6 5.4C14.8 2.4 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.7 12.9 16 21.2 6.3-8.3 16-11.8 16-21.2C32 3.8 28.2 0 23.6 0z" fill="var(--f)"/><path d="M7 4.5C4.8 5.2 3.5 7 3.4 9" stroke="#fff" stroke-opacity=".55" stroke-width="1.6" fill="none" stroke-linecap="round"/><text x="16" y="15.5" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="700" font-size="13" fill="#fff">Y</text></svg></div>
+        </div>
+        <h3>Happy Birthday twin, bing, beh, hashli, snow!</h3>
+
+        <p>Thank you for being a good friend. I appreciate you so much, and I will always be proud of you!</p>
+
+        <p>Enjoy your day! May God bless you!</p>
+    </div>
+</div>
+
+<!-- PICTURES -->
+<div id="pictures" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('pictures')">×</button>
+        <h2>PICTURES</h2>
+
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="image1.jpg" alt="Photo 1">
+            </div>
+
+            <div class="photo-card">
+                <img src="image2.jpg" alt="Photo 2">
+            </div>
+
+            <div class="photo-card">
+                <img src="image3.jpg" alt="Photo 3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FLOWERS -->
+<div id="flowers" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('flowers')">×</button>
+        <h2>FLOWERS FOR YOU</h2>
+
+        <!-- Click part -->
+        <div id="flowerStart">
+            <div class="seed" onclick="showBouquets()">🌱</div>
+            <p>Tap the seed to make something grow, twin</p>
+        </div>
+
+        <!-- Hidden until the seed is tapped -->
+        <div id="flowerReveal" style="display:none;">
+            <div class="bouquets" id="bouquets"></div>
+
+            <img src="https://cdn.pixabay.com/photo/2020/03/03/17/56/chrysanthemum-4899390_1280.jpg" class="bouquet" alt="Bouquet">
+            <p class="bouquet-text">A bouquet made just for you, twin</p>
+
+        </div>
+    </div>
+</div>
+
+<!-- CAKE -->
+<div id="cake" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('cake')">×</button>
+        <h2>MAKE A WISH</h2>
+
+        <div class="cake">
+            <div class="candle">
+                <div id="flame"></div>
+            </div>
+            <div class="layer top"></div>
+            <div class="layer middle"></div>
+            <div class="layer bottom"></div>
+        </div>
+
+        <button class="celebrate-btn" onclick="blowCandle()">Blow Candle</button>
+        <p id="status">Make a wish</p>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
+

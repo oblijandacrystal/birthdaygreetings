@@ -1,0 +1,653 @@
+/* ===== GENERAL ===== */
+body {
+    background: #F5F3F0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: #BEAD9D;
+}
+
+/* ===== CENTER WHOLE WEBSITE ===== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Button grid */
+.grid {
+    margin: 30px 0;
+    justify-content: center;
+}
+
+/* Music button */
+.music-btn {
+    margin-bottom: 40px;
+}
+
+/* ===== GRID + BUTTONS ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 25px;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.box-btn {
+    background: #D3CEC7;
+    color: #444;
+    padding: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.box-btn:hover {
+    transform: scale(1.05);
+    background: #E1E1CE;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(190, 173, 157, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background: #FFFFFF;
+    color: #333;
+    width: 80%;
+    max-width: 420px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* ===== GALLERY ===== */
+/* ===== SCRAPBOOK PICTURE GALLERY ===== */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.photo-card {
+    width: 150px;
+    padding: 10px 10px 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+    transition: 0.3s;
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.photo-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px;
+    display: block;
+}
+
+.photo-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #BEAD9D;
+    margin: 10px 0 5px;
+}
+
+/* ===== FLOWERS: SEED (CLICK PART) ===== */
+.seed {
+    display: inline-block;
+    font-size: 60px;
+    cursor: pointer;
+    margin-top: 20px;
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.2); }
+}
+
+/* ===== FLOWER ANIMATIONS ===== */
+@keyframes sway {
+    from { transform: rotate(-4deg); }
+    to   { transform: rotate(4deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* your bouquet photo appears after the bouquets */
+#flowerReveal .bouquet,
+#flowerReveal .bouquet-text {
+    opacity: 0;
+    animation: fadeIn 1s ease 2.6s forwards;
+}
+
+.bouquet {
+    width: 220px;
+    max-width: 100%;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+/* ===== CAKE ===== */
+.cake {
+    position: relative;
+    margin: 40px auto 20px auto;
+    width: 120px;
+}
+
+.candle {
+    position: relative;
+    width: 8px;
+    height: 28px;
+    background: #A1C8CB;
+    border-radius: 4px;
+    margin: 0 auto -2px;
+}
+
+.layer {
+    height: 30px;
+    border-radius: 12px;
+    margin: 5px 0;
+}
+
+.top    { background: #E1E1CE; }
+.middle { background: #D3CEC7; }
+.bottom { background: #BEAD9D; }
+
+/* ===== FLAME ===== */
+#flame {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 14px;
+    background: radial-gradient(circle, #fff4cc 20%, #ff9933 60%, #ff3300 100%);
+    border-radius: 50%;
+    animation: flicker 0.15s infinite alternate;
+    box-shadow: 0 0 8px #ff9933, 0 0 15px #ff6600, 0 0 25px #ff3300;
+}
+
+@keyframes flicker {
+    0%   { transform: translateX(-50%) scale(1);    opacity: 1; }
+    50%  { transform: translateX(-50%) scale(1.2);  opacity: 0.8; }
+    100% { transform: translateX(-50%) scale(0.95); opacity: 1; }
+}
+
+.celebrate-btn {
+    margin-top: 15px;
+    background: #A1C8CB;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#status {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .popup-content { width: 90%; }
+}
+
+/* ===== BALLOONS (SVG, moved smoothly by script.js) ===== */
+.balloon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    pointer-events: none;
+    transform-origin: 50% 28%;
+    will-change: transform;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
+}
+
+.balloon svg {
+    display: block;
+    overflow: visible;
+}
+
+/* the string swings gently, a little behind the balloon */
+.balloon .b-string {
+    transform-box: view-box;
+    transform-origin: 30px 69px;
+    animation: stringSwing 2.2s ease-in-out infinite alternate;
+    animation-delay: var(--ph, 0s);
+}
+
+@keyframes stringSwing {
+    from { transform: rotate(-9deg); }
+    to   { transform: rotate(9deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .balloon .b-string { animation: none; }
+}
+
+/* ===== THREE BOUQUETS (19 chrysanthemums each, built in script.js) ===== */
+.bouquets {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 10px 0 0;
+}
+
+.bq {
+    position: relative;
+    width: 100px;
+    height: 178px;
+}
+
+.bq .blooms {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 112px;
+    z-index: 2;
+    transform-origin: bottom center;
+    animation: sway 2.5s ease-in-out infinite alternate;
+}
+
+/* one chrysanthemum: two rings of petals + a centre */
+.mum {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    margin: -13px 0 0 -13px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--c3) 0 14%, transparent 15%),
+        repeating-conic-gradient(var(--c1) 0 9deg, var(--c2) 9deg 18deg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scale(0);
+    animation: mumIn 0.45s cubic-bezier(.2,1.5,.4,1) forwards;
+}
+
+.mum::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--c3) 0 22%, transparent 23%),
+        repeating-conic-gradient(from 9deg, var(--c2) 0 9deg, var(--c1) 9deg 18deg);
+}
+
+@keyframes mumIn {
+    from { opacity: 0; transform: scale(0) rotate(-90deg); }
+    to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* wrapping paper cone */
+.bq .wrap {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    width: 76px;
+    height: 80px;
+    background: var(--w);
+    clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
+    opacity: 0;
+    animation: fadeIn 0.5s ease var(--d) forwards;
+}
+
+.bq .bow {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeIn 0.5s ease var(--d) forwards;
+}
+
+@media (max-width: 400px) {
+    .bq { zoom: 0.85; }
+}
+
+/* your bouquet photo shows after the three bouquets */
+#flowerReveal .bouquet,
+#flowerReveal .bouquet-text {
+    animation: fadeIn 1s ease 2.6s forwards;
+}
+
+/* ===== HOMEPAGE MUSIC BUTTON ===== */
+.music-btn {
+    background: #A1C8CB;
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.05);
+}
+
+.music-btn.on {
+    background: #BEAD9D;
+}
+
+/* ===== MESSAGE ===== */
+.popup-content h3 {
+    font-size: 17px;
+    color: #BEAD9D;
+    margin: 6px 0 14px;
+}
+
+.popup-content p {
+    line-height: 1.7;
+}
+
+.music-btn { margin-bottom: 40px; }
+
+/* ===== BUTTERFLIES (smooth SVG wings, moved by script.js) ===== */
+.bf-fly {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 40;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.bf-landed {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.bf-fly svg,
+.bf-landed svg {
+    display: block;
+    overflow: visible;
+}
+
+/* each wing folds toward the body with a smooth ease */
+.wing {
+    transform-box: fill-box;
+    animation: wingFlap 0.28s ease-in-out infinite alternate;
+    animation-delay: var(--ph, 0s);
+}
+
+.wing.wl { transform-origin: 100% 50%; }
+.wing.wr { transform-origin: 0% 50%; }
+
+/* slow, relaxed flapping once landed */
+.bf-landed .wing { animation-duration: 1.4s; }
+
+@keyframes wingFlap {
+    from { transform: scaleX(1); }
+    to   { transform: scaleX(0.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wing { animation: none; }
+}
+
+/* ===== I L Y HEARTS (come forward, then beat) ===== */
+.ily {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    perspective: 600px;
+    margin: 8px 0 14px;
+}
+
+.ily-heart {
+    width: 104px;
+    opacity: 0;
+    transform: translateZ(-500px) scale(0.2);
+    animation: comeForward 1s cubic-bezier(.2, 1.3, .4, 1) var(--d) forwards;
+}
+
+.ily-heart svg {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 6px 8px rgba(232, 120, 159, 0.35));
+    animation: heartBeat 1.5s ease-in-out calc(var(--d) + 1.2s) infinite;
+}
+
+@keyframes comeForward {
+    0%   { opacity: 0; transform: translateZ(-500px) scale(0.2); }
+    60%  { opacity: 1; transform: translateZ(50px) scale(1.12); }
+    100% { opacity: 1; transform: translateZ(0) scale(1); }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.07); }
+}
+
+@media (max-width: 400px) {
+    .ily-heart { width: 88px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ily-heart { opacity: 1; transform: none; animation: none; }
+    .ily-heart svg { animation: none; }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .box-btn {
+        padding: 25px;
+    }
+
+    .popup-content {
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* ===== FLOATING BALLOON BACKGROUND ===== */
+
+.balloon-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 55px;
+    height: 70px;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.65;
+    animation: floatBalloon 12s linear infinite;
+}
+
+/* Balloon strings */
+.bg-balloon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 65px;
+    background: rgba(120, 120, 120, 0.4);
+    top: 68px;
+    left: 50%;
+}
+
+/* Balloon knots */
+.bg-balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 45%;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid currentColor;
+}
+
+/* Balloon colors */
+.bg-balloon.pink {
+    background: #F2A7B5;
+    color: #F2A7B5;
+}
+
+.bg-balloon.blue {
+    background: #A1C8CB;
+    color: #A1C8CB;
+}
+
+.bg-balloon.yellow {
+    background: #E8D18F;
+    color: #E8D18F;
+}
+
+.bg-balloon.purple {
+    background: #C9B6E4;
+    color: #C9B6E4;
+}
+
+.bg-balloon.beige {
+    background: #BEAD9D;
+    color: #BEAD9D;
+}
+
+/* Balloon positions and delays */
+.bg-balloon:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bg-balloon:nth-child(2) {
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.bg-balloon:nth-child(3) {
+    left: 35%;
+    animation-delay: 6s;
+}
+
+.bg-balloon:nth-child(4) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.bg-balloon:nth-child(5) {
+    left: 65%;
+    animation-delay: 5s;
+}
+
+.bg-balloon:nth-child(6) {
+    left: 78%;
+    animation-delay: 2s;
+}
+
+.bg-balloon:nth-child(7) {
+    left: 90%;
+    animation-delay: 7s;
+}
+
+.bg-balloon:nth-child(8) {
+    left: 95%;
+    animation-delay: 4s;
+}
+
+/* Floating animation */
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-60vh) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(-8deg);
+    }
+
+}
+body > h1,
+body > .grid,
+body > .music-btn {
+    position: relative;
+    z-index: 1;
+}
+    
